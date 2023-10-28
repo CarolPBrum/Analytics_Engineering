@@ -1,0 +1,57 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "silver_calendar",
+      "data_connector_name": "fluent",
+      "datasource_name": "ge_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20231027T232026.891335Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "silver_calendar",
+      "query": "SELECT * FROM analytics_eng.calendar_silver",
+      "temp_table_schema_name": null
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "checkpoint_silver_listing",
+    "expectation_suite_name": "suite_silver_listing",
+    "great_expectations_version": "0.17.23",
+    "run_id": {
+      "run_name": null,
+      "run_time": "2023-10-27T20:20:26.816504-03:00"
+    },
+    "validation_id": null,
+    "validation_time": "20231027T232058.792235Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": "Error: The column \"host_name\" in BatchData does not exist.",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 548, in _process_direct_and_bundled_metric_computation_configurations\n    ] = metric_computation_configuration.metric_fn(  # type: ignore[misc] # F not callable\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\expectations\\metrics\\metric_provider.py\", line 100, in inner_func\n    return metric_fn(*args, **kwargs)\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\expectations\\metrics\\map_metric_provider\\column_condition_partial.py\", line 169, in inner_func\n    metric_domain_kwargs = get_dbms_compatible_metric_domain_kwargs(\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 703, in get_dbms_compatible_metric_domain_kwargs\n    column_name: str | sqlalchemy.quoted_name = get_dbms_compatible_column_names(\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 777, in get_dbms_compatible_column_names\n    _verify_column_names_exist_and_get_normalized_typed_column_names_map(\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\expectations\\metrics\\util.py\", line 873, in _verify_column_names_exist_and_get_normalized_typed_column_names_map\n    raise gx_exceptions.InvalidMetricAccessorDomainKwargsKeyError(\ngreat_expectations.exceptions.exceptions.InvalidMetricAccessorDomainKwargsKeyError: Error: The column \"host_name\" in BatchData does not exist.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\validator\\validation_graph.py\", line 285, in _resolve\n    self._execution_engine.resolve_metrics(\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 283, in resolve_metrics\n    return self._process_direct_and_bundled_metric_computation_configurations(\n  File \"c:\\Users\\Desktop\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\great_expectations\\execution_engine\\execution_engine.py\", line 552, in _process_direct_and_bundled_metric_computation_configurations\n    raise gx_exceptions.MetricResolutionError(\ngreat_expectations.exceptions.exceptions.MetricResolutionError: Error: The column \"host_name\" in BatchData does not exist.\n",
+        "raised_exception": true
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "ge_datasource-silver_calendar",
+          "column": "host_name"
+        },
+        "meta": {}
+      },
+      "meta": {},
+      "result": {},
+      "success": false
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 1,
+    "success_percent": 0.0,
+    "successful_expectations": 0,
+    "unsuccessful_expectations": 1
+  },
+  "success": false
+}

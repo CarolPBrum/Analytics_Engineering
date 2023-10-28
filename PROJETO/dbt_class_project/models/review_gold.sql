@@ -1,0 +1,1 @@
+select * from {{source ('review_g', 'review_silver')}}

@@ -1,0 +1,10 @@
+version: 2
+
+source: 
+    - name: review_g
+      description: 'Dados Review Airbnb'
+      database: 'Ada'
+      schema: analytics_eng
+      tables:
+          - name: review_silver
+            description: 'Dados Brutos Review Airbnb'
